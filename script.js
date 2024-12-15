@@ -1,10 +1,10 @@
-const boxes = document.querySelector(".ticTacGrid")
+const boxes = document.querySelectorAll(".ticTacGrid div")
 
 let currentPlayer = "X";
 let nextPlayer = "O"
 
 boxes.forEach(box =>{
-    box.addEventListener("click"), function(click){
+    box.addEventListener("click", function(click){
         const clickedBox = click.target;
 
         if (clickedBox.classList.contains("box1") ||
@@ -18,15 +18,26 @@ boxes.forEach(box =>{
         clickedBox.classList.contains("box9")) {
 
     if(!clickedBox.textContent){
-        clickedBox.textContent = currentPlayer
+        clickedBox.textContent = currentPlayer 
+        clickedBox.style.backgroundColor = "whitesmoke"
 
         let playerMove = currentPlayer;
             currentPlayer = nextPlayer;
             nextPlayer = playerMove;
+
+           
     }
     }
-    }
+    })
 })
 
+
+const resetButton = document.querySelector('button');
+    resetButton.addEventListener('click', function(){
+        boxes.forEach(box=>{
+            box.textContent = "";
+            box.style.backgroundColor = ""
+        })
+    })
 
 

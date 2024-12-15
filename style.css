@@ -11,6 +11,18 @@
     
 }
 
+button{
+    margin-left: 47vw;
+    margin-top: 1%;
+    height: 40px;
+    width: 90px;
+    border: solid #1F4591;
+    color: #1F4591;
+    font-family: "";
+    font-weight: bold;
+    font-size: larger;
+}
+
 
 
 
@@ -28,6 +40,11 @@ h1{
 @font-face {
     font-family: "Title Txt" ;
     src: url("/VtksTattooShadow-VV9e.ttf");
+}
+
+@font-face {
+    font-family: "Grid Txt";
+    src: url("/EgyptienneZierinitialien-Rpj6.ttf")
 }
 
 
@@ -57,7 +74,9 @@ h1{
     display: flex;
     flex-wrap: wrap;
    margin-left: 160px;
-   font-size: 32px;
+   font-size: 100px;
+   font-family: "Grid Txt";
+   color: #1F4591;
 }
 
 
@@ -68,6 +87,11 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
 }
 
 .box2{
@@ -75,6 +99,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .box3{
@@ -82,6 +110,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .box4{
@@ -89,6 +121,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
     
    
@@ -99,6 +135,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 
 }
@@ -108,6 +148,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 
 }
@@ -118,6 +162,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 
 }
@@ -127,6 +175,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 
 }
@@ -136,6 +188,10 @@ h1{
     height: 33.33%;
     width: 33.33%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
    
 
 }
