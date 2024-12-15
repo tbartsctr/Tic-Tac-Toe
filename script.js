@@ -6,11 +6,11 @@ let gameOver = "false";
 
 
 const board = [
-    ["","",""]
-    ["","",""]
-    ["","",""]
+    [boxes[0].textContent, boxes[1].textContent, boxes[2].textContent],
+    [boxes[3].textContent, boxes[4].textContent, boxes[5].textContent],
+    [boxes[6].textContent, boxes[7].textContent, boxes[8].textContent],
     
-]
+];
 
 
 function checkWinner(){
@@ -27,7 +27,7 @@ function checkWinner(){
     //Checks Columns
 
     for (let i = 0; i < 3; i++)
-        if (board[0][i] && board[0][i] === board[1][i] && board[0][1] === board[2][i]){; 
+        if (board[0][i] && board[0][i] === board[1][i] && board[0][i] === board[2][i]){; 
 
                 return `${board[0][i]} Won!`;
 
@@ -59,9 +59,22 @@ boxes.forEach(box =>{
         clickedBox.textContent = currentPlayer 
         clickedBox.style.backgroundColor = "whitesmoke"
 
+        const boxIndex = Array.from(boxes).indexOf(clickedBox)
+        const row = Math.floor(boxIndex / 3);
+        const column = boxIndex % 3;
+        board[row][column] = currentPlayer;
+
+
+
         let playerMove = currentPlayer;
             currentPlayer = nextPlayer;
             nextPlayer = playerMove;
+
+            const winner = checkWinner();
+                if(winner){
+                    alert("You Won!")
+                    gameOver = true;
+                }
 
            
     }
@@ -70,7 +83,7 @@ boxes.forEach(box =>{
 })
 
 
-const resetButton = document.querySelector('button');
+const resetButton = document.getElementById('resetBtn');
     resetButton.addEventListener('click', function(){
         boxes.forEach(box=>{
             box.textContent = "";
