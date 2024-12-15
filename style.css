@@ -1,0 +1,162 @@
+.backGround{
+    background-color: #B9D9EB;
+    border: solid #1F4591;
+    height: 100vh;
+    width: 100%;
+    //display: flex;
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+h1{
+    font-size: 500%;
+    text-align: center;
+    font-family: "Title Txt";
+    color: #1F4591;
+    
+
+}
+
+@font-face {
+    font-family: "Title Txt" ;
+    src: url("/VtksTattooShadow-VV9e.ttf");
+}
+
+
+.ticTacBody{
+    //background-color: #0C6170;
+    //background-image: url("https://www.shutterstock.com/image-vector/japanese-dragon-mythological-animal-asian-600nw-1836575317.jpg");
+    //background-position: center;
+    border: solid #B9D9EB;
+    width: 80%;
+    height: 60%; 
+    margin-top: 100px;
+    margin-left: 10%;
+    display: flex;
+    //flex-wrap: wrap;
+    //align-items: flex-start;
+    
+
+    
+}
+
+.ticTacGrid{
+    border: solid #1F4591;
+    width: 40%;
+    height: 100%;
+    background-image: url("https://www.shutterstock.com/image-vector/japanese-dragon-mythological-animal-asian-600nw-1836575317.jpg");
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+   margin-left: 160px;
+}
+
+
+
+
+.box1{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+}
+
+.box2{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+}
+
+.box3{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+}
+
+.box4{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+    
+    
+   
+}
+
+.box5{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+    
+
+}
+
+.box6{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+    
+
+}
+
+
+.box7{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+    
+
+}
+
+.box8{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+    
+
+}
+
+.box9{
+    border: solid #1F4591;
+    height: 33.33%;
+    width: 33.33%;
+    box-sizing: border-box;
+   
+
+}
+
+
+.box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover, .box8:hover, .box9:hover {
+
+    background-color: whitesmoke;
+
+}
+
+.dragon2Img{
+    margin-left: 150px;
+
+}
+
+.dragon1Img{
+    margin-left: 50px;
+}
+
+
+.boxes {
+    font-family: "Title Txt";
+    color: #1F4591;
+}
