@@ -4,6 +4,7 @@ let currentPlayer = "X";
 let nextPlayer = "O";
 let gameOver = "false";
 
+function checkBoard(){
 
 const board = [
     [boxes[0].textContent, boxes[1].textContent, boxes[2].textContent],
@@ -11,18 +12,22 @@ const board = [
     [boxes[6].textContent, boxes[7].textContent, boxes[8].textContent],
     
 ];
+    return board;
 
-
-function checkWinner(){
+}
 
     // Checks Rows
+    function checkWinner(){
+        const board = checkBoard();
+    
+
 
     for (let i = 0; i < 3; i++)
         if (board[i][0] && board[i][0] === board[i][1] && board[i][0] === board[i][2]) {
 
                 return `${board[i][0]} Won!`;
         }
-}
+
 
     //Checks Columns
 
@@ -38,6 +43,7 @@ function checkWinner(){
 
         return `${board[0][0]} Won!`;
     }
+}
 
 
 
