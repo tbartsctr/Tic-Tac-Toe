@@ -2,7 +2,7 @@ const boxes = document.querySelectorAll(".ticTacGrid div")
 
 let currentPlayer = "X";
 let nextPlayer = "O";
-let gameOver = "false";
+let gameOver = false;
 
 
 
@@ -18,13 +18,14 @@ let gameOver = "false";
 
     // Checks Rows
     function checkWinner(){
+        console.log("check");
     
 
 
     for (let i = 0; i < 3; i++)
         if (board[i][0] && board[i][0] === board[i][1] && board[i][0] === board[i][2]) {
                 triggerConfetti();
-                return `${board[i][0]} Won!`;
+                return board[i][0];
         }
 
 
@@ -33,7 +34,7 @@ let gameOver = "false";
     for (let i = 0; i < 3; i++)
         if (board[0][i] && board[0][i] === board[1][i] && board[0][i] === board[2][i]){; 
                 triggerConfetti();
-                return `${board[0][i]} Won!`;
+                return board[0][i];
 
         }
 
@@ -43,7 +44,7 @@ let gameOver = "false";
     if ((board[0][0] && board[0][0] === board[1][1] && board[0][0] === board[2][2]) || 
         (board[0][2] && board[0][2] === board[1][1] && board[0][2] === board[2][0])) {
             triggerConfetti();
-            return `${board[0][0]} Won!`;
+            return board[0][0];
     }
         return null;
 }
@@ -83,6 +84,7 @@ boxes.forEach(box =>{
 
             const winner = checkWinner();
                 if(winner){
+                    triggerConfetti();
                     alert("You Won!")
                     gameOver = true;
                 }
@@ -118,18 +120,31 @@ const resetButton = document.getElementById('resetBtn');
     })
 
     function triggerConfetti(){
-        const confettiAmount = 100;
 
-        for(let i = 0; i < 100; i++){
+        const confettiDiv = document.querySelector(".confettiDiv");
+    
+       
+        if (!confettiDiv) {
+            confettiDiv = document.createElement("div");
+            confettiDiv.className = "confettiDiv"; 
+            document.body.appendChild(confettiDiv); 
+        }
+
+        const confettiAmount = 400;
+
+        for(let i = 0; i < confettiAmount; i++){
             const confettiPiece = document.createElement("div");
             confettiPiece.classList.add("confetti-Piece");
             const colors = ['#ff0', '#f00', '#00f', '#0f0', '#ff00ff'];
 
             confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             confettiPiece.style.left = `${Math.random() * 100}%`;
-            confettiPiece.style.animationDuration = `${Math.random() * 2 + 2}s`;
+            const randomHorizontalMovement = Math.random() * 100 - 50;
+            confettiPiece.style.transform = `translateX(${randomHorizontalMovement}px)`;
+            confettiPiece.style.animationDuration = `${Math.random() * 8 + 12}s`;
+            confettiPiece.style.animationDelay = `${Math.random() * 2}s`;
 
-            confetti.appendChild(confettiPiece);
+            confettiDiv.appendChild(confettiPiece);
 
             setTimeout(() => {
                 confettiPiece.remove();
