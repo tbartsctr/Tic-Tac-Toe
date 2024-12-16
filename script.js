@@ -23,7 +23,7 @@ let gameOver = "false";
 
     for (let i = 0; i < 3; i++)
         if (board[i][0] && board[i][0] === board[i][1] && board[i][0] === board[i][2]) {
-
+                triggerConfetti();
                 return `${board[i][0]} Won!`;
         }
 
@@ -32,7 +32,7 @@ let gameOver = "false";
 
     for (let i = 0; i < 3; i++)
         if (board[0][i] && board[0][i] === board[1][i] && board[0][i] === board[2][i]){; 
-
+                triggerConfetti();
                 return `${board[0][i]} Won!`;
 
         }
@@ -42,7 +42,7 @@ let gameOver = "false";
 
     if ((board[0][0] && board[0][0] === board[1][1] && board[0][0] === board[2][2]) || 
         (board[0][2] && board[0][2] === board[1][1] && board[0][2] === board[2][0])) {
-    
+            triggerConfetti();
             return `${board[0][0]} Won!`;
     }
         return null;
@@ -92,7 +92,7 @@ boxes.forEach(box =>{
     }
     })
 })
-
+        //Reset Button
 
 const resetButton = document.getElementById('resetBtn');
     resetButton.addEventListener('click', function(){
@@ -107,5 +107,34 @@ const resetButton = document.getElementById('resetBtn');
         gameOver = false;
     });
 
-   
+
+        // Confetti Effect for Win!
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+        var confetti = document.createElement("div");
+        confetti.className = "confettiDiv";
+        document.body.appendChild(confetti);
+    })
+
+    function triggerConfetti(){
+        const confettiAmount = 100;
+
+        for(let i = 0; i < 100; i++){
+            const confettiPiece = document.createElement("div");
+            confettiPiece.classList.add("confetti-Piece");
+            const colors = ['#ff0', '#f00', '#00f', '#0f0', '#ff00ff'];
+
+            confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confettiPiece.style.left = `${Math.random() * 100}%`;
+            confettiPiece.style.animationDuration = `${Math.random() * 2 + 2}s`;
+
+            confetti.appendChild(confettiPiece);
+
+            setTimeout(() => {
+                confettiPiece.remove();
+            }, 3000);
+    }
+
+}
 
