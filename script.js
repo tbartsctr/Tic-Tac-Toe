@@ -4,21 +4,20 @@ let currentPlayer = "X";
 let nextPlayer = "O";
 let gameOver = "false";
 
-function checkBoard(){
 
-const board = [
-    [boxes[0].textContent, boxes[1].textContent, boxes[2].textContent],
-    [boxes[3].textContent, boxes[4].textContent, boxes[5].textContent],
-    [boxes[6].textContent, boxes[7].textContent, boxes[8].textContent],
-    
-];
-    return board;
 
-}
+    const board = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ];
+
+  
+
+
 
     // Checks Rows
     function checkWinner(){
-        const board = checkBoard();
     
 
 
@@ -37,12 +36,16 @@ const board = [
                 return `${board[0][i]} Won!`;
 
         }
+
+        
     // Check Diagnols
 
-    if ((board[0][0] && board[0][0] === board[1][1] && board[0][0] === board[2][2]) || board[0][2] && board[0][2] === (board[1][1] && board[0][2] === board[2][0])){
-
-        return `${board[0][0]} Won!`;
+    if ((board[0][0] && board[0][0] === board[1][1] && board[0][0] === board[2][2]) || 
+        (board[0][2] && board[0][2] === board[1][1] && board[0][2] === board[2][0])) {
+    
+            return `${board[0][0]} Won!`;
     }
+        return null;
 }
 
 
@@ -65,6 +68,10 @@ boxes.forEach(box =>{
         clickedBox.textContent = currentPlayer 
         clickedBox.style.backgroundColor = "whitesmoke"
 
+        let playerMove = currentPlayer;
+            currentPlayer = nextPlayer;
+            nextPlayer = playerMove;
+
         const boxIndex = Array.from(boxes).indexOf(clickedBox)
         const row = Math.floor(boxIndex / 3);
         const column = boxIndex % 3;
@@ -72,9 +79,7 @@ boxes.forEach(box =>{
 
 
 
-        let playerMove = currentPlayer;
-            currentPlayer = nextPlayer;
-            nextPlayer = playerMove;
+    
 
             const winner = checkWinner();
                 if(winner){
@@ -93,8 +98,14 @@ const resetButton = document.getElementById('resetBtn');
     resetButton.addEventListener('click', function(){
         boxes.forEach(box=>{
             box.textContent = "";
-            box.style.backgroundColor = ""
-        })
-    })
+            box.style.backgroundColor = "";
+        });
+        
+        board.forEach(row => row.fill(""))
+        currentPlayer = "X";
+        nextPlayer = "O";
+        gameOver = false;
+    });
 
+   
 
